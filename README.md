@@ -1,21 +1,30 @@
-# LLM attack and defense lab (week 1)
+# AI Security Portfolio
 
-> Part of my 30-day AI security portfolio. One project per week, published live.  
-> Follow along on LinkedIn: Securing the AI Stack
+> 30-day hands-on AI security lab. One project per week, published live.  
+> Follow along on LinkedIn: [Securing the AI Stack](https://www.linkedin.com/in/sohamisaniceguy)
 
 ---
 
-## What is this?
+## Projects
 
-I spent a week trying to break an LLM app, then trying to stop myself from breaking it.
-
-5 prompt injection attacks. 3 defenses. One matrix to see what actually held.
+| Week | Project | Status |
+|---|---|---|
+| 1 | [LLM Attack & Defense Lab](week1-llm-baseline/) | Complete |
+| 2 | [Secure RAG Application](week2-rag-security/) | In progress |
+| 3 | AI Security Audit CLI | Coming |
+| 4 | AI Runtime Monitor | Coming |
 
 Model: `llama-3.3-70b-versatile` via Groq. No GPU, no cloud bill beyond free tier.
 
 ---
 
-## Folder structure
+## Week 1 — LLM Attack & Defense Lab
+
+I spent a week trying to break an LLM app, then trying to stop myself from breaking it.
+
+5 prompt injection attacks. 3 defenses. One matrix to see what actually held.
+
+### Folder structure
 
 ```
 week1-llm-baseline/
@@ -119,10 +128,7 @@ Results print to console. The matrix in `eval_matrix.md` has the full breakdown.
 
 ## What's next
 
-Week 1 of 4:
+- Week 3: AI security audit CLI — checking AWS AI IAM, logging, and endpoints
+- Week 4: AI runtime monitor — FastAPI proxy with detection rules and a Streamlit dashboard
 
-- Week 2: secure RAG application, data poisoning attacks on LangChain + ChromaDB
-- Week 3: AI security audit CLI, checking AWS AI IAM, logging, and endpoints
-- Week 4: AI runtime monitor, FastAPI proxy with detection rules and a Streamlit dashboard
-
-Full series on LinkedIn: Securing the AI Stack
+Full series on LinkedIn: [Securing the AI Stack](https://www.linkedin.com/in/sohamisaniceguy)

@@ -1,0 +1,21 @@
+ACME Corp AI Systems Usage Policy v1.0
+
+1. APPROVED AI TOOLS
+   - Only AI tools on the approved vendor list may be used for work tasks.
+   - Approved tools: GitHub Copilot (code only), Microsoft Copilot (internal use).
+   - Unapproved AI tools (ChatGPT, Claude, Gemini) must not be used for internal data.
+
+2. DATA CLASSIFICATION
+   - Confidential or restricted data must never be submitted to external AI systems.
+   - AI-generated code must be reviewed by a human before merging to production.
+   - AI outputs should be verified against authoritative sources before use.
+
+3. AI MODEL SECURITY
+   - All AI API keys must be stored in secrets management (Vault), never in code.
+   - AI model endpoints must be protected by authentication and rate limiting.
+   - Prompt injection attacks are a known threat — validate all LLM inputs and outputs.
+
+4. MONITORING
+   - All AI system interactions must be logged for audit purposes.
+   - Anomalous AI usage patterns will trigger a security review.
+   - AI model outputs that contain sensitive data patterns will be flagged automatically.

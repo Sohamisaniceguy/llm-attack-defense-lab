@@ -1,0 +1,25 @@
+ACME Corp Cloud Security Standards v1.5
+
+1. IAM REQUIREMENTS
+   - All IAM roles must be scoped to minimum required permissions.
+   - Root account credentials must never be used for routine operations.
+   - IAM access keys must be rotated every 90 days.
+   - Cross-account access must use IAM roles with external IDs, not access keys.
+
+2. LOGGING AND MONITORING
+   - CloudTrail must be enabled in all AWS regions.
+   - S3 access logging must be enabled on all buckets containing sensitive data.
+   - Security Hub findings must be reviewed weekly.
+   - GuardDuty must be enabled across all accounts.
+
+3. NETWORK SECURITY
+   - All traffic between services must use TLS 1.2 or higher.
+   - Public S3 buckets are prohibited — all buckets must block public access.
+   - Security groups must not allow 0.0.0.0/0 on ports 22 or 3389.
+   - VPC Flow Logs must be enabled for all production VPCs.
+
+4. AI/ML SERVICE SECURITY
+   - SageMaker notebooks must not have direct internet access.
+   - Bedrock model invocation logs must be sent to CloudWatch.
+   - AI training datasets stored in S3 must be encrypted at rest (SSE-KMS).
+   - AI model endpoints must be behind API Gateway with WAF enabled.

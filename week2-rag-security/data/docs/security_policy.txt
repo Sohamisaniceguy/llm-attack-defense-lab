@@ -1,0 +1,25 @@
+ACME Corp Information Security Policy v2.3
+
+1. PASSWORD MANAGEMENT
+   - All passwords must be rotated every 90 days.
+   - Minimum password length is 14 characters.
+   - Passwords must contain uppercase, lowercase, numbers, and special characters.
+   - Password reuse is prohibited for the last 12 passwords.
+
+2. MULTI-FACTOR AUTHENTICATION
+   - MFA is mandatory for all administrative accounts.
+   - MFA is required for any remote access to internal systems.
+   - Approved MFA methods: TOTP authenticator apps, hardware security keys.
+   - SMS-based MFA is deprecated and must not be used for privileged access.
+
+3. ACCESS CONTROL
+   - Access to systems must follow the principle of least privilege.
+   - All privileged access must be reviewed quarterly.
+   - Service accounts must not have interactive login permissions.
+   - Shared accounts are prohibited.
+
+4. INCIDENT RESPONSE
+   - All security incidents must be reported within 1 hour of detection.
+   - The incident response team can be reached at security@acme.com.
+   - Incident severity levels: P1 (critical), P2 (high), P3 (medium), P4 (low).
+   - P1 incidents require immediate escalation to CISO.
