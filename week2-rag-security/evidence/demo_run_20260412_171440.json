@@ -1,0 +1,77 @@
+[
+  {
+    "question": "What is the password rotation policy?",
+    "answer": "The password rotation policy requires all passwords to be rotated every 90 days. (Source: security_policy.txt, Section 1. PASSWORD MANAGEMENT)",
+    "retrieved_docs": [
+      "1. PASSWORD MANAGEMENT\n   - All passwords must be rotated every 90 days.\n   - Minimum password length is 14 characters.\n   - Passwords must contain uppercase, lowercase, numbers, and special characters.\n   - Password reuse is prohibited for the last 12 passwords.",
+      "3. ACCESS CONTROL\n   - Access to systems must follow the principle of least privilege.\n   - All privileged access must be reviewed quarterly.\n   - Service accounts must not have interactive login permissions.\n   - Shared accounts are prohibited.",
+      "2. MULTI-FACTOR AUTHENTICATION\n   - MFA is mandatory for all administrative accounts.\n   - MFA is required for any remote access to internal systems.\n   - Approved MFA methods: TOTP authenticator apps, hardware security keys.\n   - SMS-based MFA is deprecated and must not be used for privileged access."
+    ],
+    "retrieved_sources": [
+      "security_policy.txt",
+      "security_policy.txt",
+      "security_policy.txt"
+    ],
+    "context": "[1] Source: security_policy.txt\n1. PASSWORD MANAGEMENT\n   - All passwords must be rotated every 90 days.\n   - Minimum password length is 14 characters.\n   - Passwords must contain uppercase, lowercase, numbers, and special characters.\n   - Password reuse is prohibited for the last 12 passwords.\n\n[2] Source: security_policy.txt\n3. ACCESS CONTROL\n   - Access to systems must follow the principle of least privilege.\n   - All privileged access must be reviewed quarterly.\n   - Service accounts must not have interactive login permissions.\n   - Shared accounts are prohibited.\n\n[3] Source: security_policy.txt\n2. MULTI-FACTOR AUTHENTICATION\n   - MFA is mandatory for all administrative accounts.\n   - MFA is required for any remote access to internal systems.\n   - Approved MFA methods: TOTP authenticator apps, hardware security keys.\n   - SMS-based MFA is deprecated and must not be used for privileged access."
+  },
+  {
+    "question": "Is SMS-based MFA allowed for admin accounts?",
+    "answer": "No, SMS-based MFA is not allowed for privileged access, including admin accounts. (Source: security_policy.txt, section 2. MULTI-FACTOR AUTHENTICATION)",
+    "retrieved_docs": [
+      "2. MULTI-FACTOR AUTHENTICATION\n   - MFA is mandatory for all administrative accounts.\n   - MFA is required for any remote access to internal systems.\n   - Approved MFA methods: TOTP authenticator apps, hardware security keys.\n   - SMS-based MFA is deprecated and must not be used for privileged access.",
+      "1. IAM REQUIREMENTS\n   - All IAM roles must be scoped to minimum required permissions.\n   - Root account credentials must never be used for routine operations.\n   - IAM access keys must be rotated every 90 days.\n   - Cross-account access must use IAM roles with external IDs, not access keys.",
+      "3. ACCESS CONTROL\n   - Access to systems must follow the principle of least privilege.\n   - All privileged access must be reviewed quarterly.\n   - Service accounts must not have interactive login permissions.\n   - Shared accounts are prohibited."
+    ],
+    "retrieved_sources": [
+      "security_policy.txt",
+      "cloud_security_standards.txt",
+      "security_policy.txt"
+    ],
+    "context": "[1] Source: security_policy.txt\n2. MULTI-FACTOR AUTHENTICATION\n   - MFA is mandatory for all administrative accounts.\n   - MFA is required for any remote access to internal systems.\n   - Approved MFA methods: TOTP authenticator apps, hardware security keys.\n   - SMS-based MFA is deprecated and must not be used for privileged access.\n\n[2] Source: cloud_security_standards.txt\n1. IAM REQUIREMENTS\n   - All IAM roles must be scoped to minimum required permissions.\n   - Root account credentials must never be used for routine operations.\n   - IAM access keys must be rotated every 90 days.\n   - Cross-account access must use IAM roles with external IDs, not access keys.\n\n[3] Source: security_policy.txt\n3. ACCESS CONTROL\n   - Access to systems must follow the principle of least privilege.\n   - All privileged access must be reviewed quarterly.\n   - Service accounts must not have interactive login permissions.\n   - Shared accounts are prohibited."
+  },
+  {
+    "question": "What should I do if I detect a P1 security incident?",
+    "answer": "If you detect a P1 security incident, you should report it within 1 hour of detection and escalate it immediately to the CISO. (Source: security_policy.txt)",
+    "retrieved_docs": [
+      "4. INCIDENT RESPONSE\n   - All security incidents must be reported within 1 hour of detection.\n   - The incident response team can be reached at security@acme.com.\n   - Incident severity levels: P1 (critical), P2 (high), P3 (medium), P4 (low).\n   - P1 incidents require immediate escalation to CISO.",
+      "4. MONITORING\n   - All AI system interactions must be logged for audit purposes.\n   - Anomalous AI usage patterns will trigger a security review.\n   - AI model outputs that contain sensitive data patterns will be flagged automatically.",
+      "ACME Corp Information Security Policy v2.3"
+    ],
+    "retrieved_sources": [
+      "security_policy.txt",
+      "ai_usage_policy.txt",
+      "security_policy.txt"
+    ],
+    "context": "[1] Source: security_policy.txt\n4. INCIDENT RESPONSE\n   - All security incidents must be reported within 1 hour of detection.\n   - The incident response team can be reached at security@acme.com.\n   - Incident severity levels: P1 (critical), P2 (high), P3 (medium), P4 (low).\n   - P1 incidents require immediate escalation to CISO.\n\n[2] Source: ai_usage_policy.txt\n4. MONITORING\n   - All AI system interactions must be logged for audit purposes.\n   - Anomalous AI usage patterns will trigger a security review.\n   - AI model outputs that contain sensitive data patterns will be flagged automatically.\n\n[3] Source: security_policy.txt\nACME Corp Information Security Policy v2.3"
+  },
+  {
+    "question": "Can I use ChatGPT for work tasks involving internal data?",
+    "answer": "According to the ai_usage_policy.txt (Section 1), ChatGPT is listed as an unapproved AI tool and must not be used for internal data. Therefore, the answer is no, you cannot use ChatGPT for work tasks involving internal data. (Source: ai_usage_policy.txt, Section 1)",
+    "retrieved_docs": [
+      "1. APPROVED AI TOOLS\n   - Only AI tools on the approved vendor list may be used for work tasks.\n   - Approved tools: GitHub Copilot (code only), Microsoft Copilot (internal use).\n   - Unapproved AI tools (ChatGPT, Claude, Gemini) must not be used for internal data.",
+      "2. DATA CLASSIFICATION\n   - Confidential or restricted data must never be submitted to external AI systems.\n   - AI-generated code must be reviewed by a human before merging to production.\n   - AI outputs should be verified against authoritative sources before use.",
+      "4. AI/ML SERVICE SECURITY\n   - SageMaker notebooks must not have direct internet access.\n   - Bedrock model invocation logs must be sent to CloudWatch.\n   - AI training datasets stored in S3 must be encrypted at rest (SSE-KMS).\n   - AI model endpoints must be behind API Gateway with WAF enabled."
+    ],
+    "retrieved_sources": [
+      "ai_usage_policy.txt",
+      "ai_usage_policy.txt",
+      "cloud_security_standards.txt"
+    ],
+    "context": "[1] Source: ai_usage_policy.txt\n1. APPROVED AI TOOLS\n   - Only AI tools on the approved vendor list may be used for work tasks.\n   - Approved tools: GitHub Copilot (code only), Microsoft Copilot (internal use).\n   - Unapproved AI tools (ChatGPT, Claude, Gemini) must not be used for internal data.\n\n[2] Source: ai_usage_policy.txt\n2. DATA CLASSIFICATION\n   - Confidential or restricted data must never be submitted to external AI systems.\n   - AI-generated code must be reviewed by a human before merging to production.\n   - AI outputs should be verified against authoritative sources before use.\n\n[3] Source: cloud_security_standards.txt\n4. AI/ML SERVICE SECURITY\n   - SageMaker notebooks must not have direct internet access.\n   - Bedrock model invocation logs must be sent to CloudWatch.\n   - AI training datasets stored in S3 must be encrypted at rest (SSE-KMS).\n   - AI model endpoints must be behind API Gateway with WAF enabled."
+  },
+  {
+    "question": "What are the requirements for SageMaker notebook security?",
+    "answer": "According to the cloud_security_standards.txt document, SageMaker notebooks must not have direct internet access. (Source: [1] cloud_security_standards.txt, Section 4. AI/ML SERVICE SECURITY)",
+    "retrieved_docs": [
+      "4. AI/ML SERVICE SECURITY\n   - SageMaker notebooks must not have direct internet access.\n   - Bedrock model invocation logs must be sent to CloudWatch.\n   - AI training datasets stored in S3 must be encrypted at rest (SSE-KMS).\n   - AI model endpoints must be behind API Gateway with WAF enabled.",
+      "1. IAM REQUIREMENTS\n   - All IAM roles must be scoped to minimum required permissions.\n   - Root account credentials must never be used for routine operations.\n   - IAM access keys must be rotated every 90 days.\n   - Cross-account access must use IAM roles with external IDs, not access keys.",
+      "3. AI MODEL SECURITY\n   - All AI API keys must be stored in secrets management (Vault), never in code.\n   - AI model endpoints must be protected by authentication and rate limiting.\n   - Prompt injection attacks are a known threat \u2014 validate all LLM inputs and outputs."
+    ],
+    "retrieved_sources": [
+      "cloud_security_standards.txt",
+      "cloud_security_standards.txt",
+      "ai_usage_policy.txt"
+    ],
+    "context": "[1] Source: cloud_security_standards.txt\n4. AI/ML SERVICE SECURITY\n   - SageMaker notebooks must not have direct internet access.\n   - Bedrock model invocation logs must be sent to CloudWatch.\n   - AI training datasets stored in S3 must be encrypted at rest (SSE-KMS).\n   - AI model endpoints must be behind API Gateway with WAF enabled.\n\n[2] Source: cloud_security_standards.txt\n1. IAM REQUIREMENTS\n   - All IAM roles must be scoped to minimum required permissions.\n   - Root account credentials must never be used for routine operations.\n   - IAM access keys must be rotated every 90 days.\n   - Cross-account access must use IAM roles with external IDs, not access keys.\n\n[3] Source: ai_usage_policy.txt\n3. AI MODEL SECURITY\n   - All AI API keys must be stored in secrets management (Vault), never in code.\n   - AI model endpoints must be protected by authentication and rate limiting.\n   - Prompt injection attacks are a known threat \u2014 validate all LLM inputs and outputs."
+  }
+]
